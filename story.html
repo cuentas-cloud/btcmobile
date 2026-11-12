@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Bitcoin Story | Bitcoin Mobile</title>
+  <meta name="description" content="How Bitcoin happened. Why it matters. And why a mobile carrier built on Bitcoin principles makes sense.">
+  <meta property="og:title" content="The Bitcoin Story | Bitcoin Mobile">
+  <meta property="og:description" content="From the 2008 financial crisis to your phone bill: how one led to the other.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F7931A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' font-weight='bold' fill='%23fff' font-family='Arial'%3E%E2%82%BF%3C/text%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>if (window.tailwind) tailwind.config = { corePlugins:{ preflight:false } };</script>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/premium.css">
+  <script src="assets/premium.js" defer></script>
+  <style>
+    /* Chapter header */
+    .chapter{padding:96px 0;border-top:1px solid var(--hairline)}
+    @media (min-width:768px){.chapter{padding:128px 0}}
+    .chap-meta{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;font-size:15px}
+    .chap-meta .n{font-weight:600;color:var(--accent-text)}
+    .chap-meta .d{color:var(--text-2)}
+    .chapter h2{margin-bottom:32px}
+
+    /* Chapter dots */
+    .cdot{display:block;width:8px;height:8px;border-radius:50%;background:var(--line);transition:background-color .25s var(--ease),transform .25s var(--ease)}
+    .cdot:hover{background:var(--text-2)}
+    .cdot.active{background:var(--text);transform:scale(1.35)}
+    #cdots a{padding:6px}
+
+    /* Principles accordion */
+    .principle{cursor:pointer;padding:24px 0;border-bottom:1px solid var(--line)}
+    .principles{border-top:1px solid var(--line)}
+    .principle__plus{width:28px;height:28px;display:grid;place-items:center;color:var(--text-2);transition:transform .3s var(--ease),color .3s}
+    .principle:hover .principle__plus{color:var(--text)}
+    .principle.is-open .principle__plus{transform:rotate(45deg);color:var(--text)}
+    .principle__body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease),margin-top .4s var(--ease)}
+    .principle__body>div{overflow:hidden}
+    .principle.is-open .principle__body{grid-template-rows:1fr;margin-top:14px}
+
+    /* Timeline */
+    .tl{position:relative;margin-left:5px;border-left:1px solid var(--line)}
+    .tl__row{position:relative;padding:0 0 44px 32px}
+    .tl__row:last-child{padding-bottom:0}
+    .tl__row::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+    .tl__year{font-size:28px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:10px;font-variant-numeric:tabular-nums}
+
+    /* Mapping table */
+    .map{width:100%;border-collapse:collapse;table-layout:fixed;font-size:16px}
+    .map th,.map td{padding:22px 24px;vertical-align:top;text-align:left;font-weight:400;line-height:1.55}
+    .map thead th{font-size:13px;font-weight:600;border-bottom:1px solid var(--line)}
+    .map tbody tr+tr{border-top:1px solid var(--hairline)}
+    .map tbody th{color:var(--text-2);width:38%}
+    .map tbody td{color:var(--text-2)}
+    .map tbody td strong{font-weight:600;color:var(--text)}
+    @media (max-width:600px){
+      .map,.map thead,.map tbody,.map tr,.map th,.map td{display:block;width:auto!important}
+      .map thead{display:none}
+      .map tbody th{padding-bottom:4px;font-weight:600;color:var(--text)}
+      .map tbody td{padding-top:0}
+    }
+    .scroll-cue{display:inline-flex;align-items:center;gap:6px;margin-top:48px;font-size:14px;color:var(--text-2);min-height:44px}
+    .scroll-cue:hover{color:var(--text)}
+  </style>
+</head>
+
+<body class="story-page">
+  <a href="#main" class="skip">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  </svg>
+
+  <div id="stickyCta" class="sticky-cta">
+    <a href="#story-signup" class="btn btn-primary btn-block">Get Bitcoin Mobile →</a>
+  </div>
+
+  <!-- CHAPTER DOTS (large screens) -->
+  <nav aria-label="Chapters" class="hidden xl:flex fixed right-5 top-1/2 -translate-y-1/2 z-40 flex-col gap-1" id="cdots">
+    <a href="#chap-1" title="01 · The break" aria-label="01 · The break"><span class="cdot"></span></a>
+    <a href="#chap-2" title="02 · The proposal" aria-label="02 · The proposal"><span class="cdot"></span></a>
+    <a href="#chap-3" title="03 · The first block" aria-label="03 · The first block"><span class="cdot"></span></a>
+    <a href="#chap-4" title="04 · Principles" aria-label="04 · Principles"><span class="cdot"></span></a>
+    <a href="#chap-5" title="05 · Sixteen years later" aria-label="05 · Sixteen years later"><span class="cdot"></span></a>
+    <a href="#chap-6" title="06 · Mobile, broken" aria-label="06 · Mobile, broken"><span class="cdot"></span></a>
+    <a href="#chap-7" title="07 · Why we built this" aria-label="07 · Why we built this"><span class="cdot"></span></a>
+  </nav>
+
+  <!-- NAV -->
+  <header class="nav nav-dark">
+    <div class="wrap wrap-wide nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">₿</span><span>Bitcoin<b>Mobile</b></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#plans">Plans</a>
+        <a href="bitcoin-switch.html">For Bitcoin holders</a>
+        <a href="story.html" aria-current="page">The Story</a><a href="about.html">About</a>
+        <a href="index.html#coverage">Coverage</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="index.html#signup" class="btn btn-primary btn-sm hidden sm:inline-flex">Get Bitcoin Mobile</a>
+        <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="menu hidden">
+      <a href="index.html#plans">Plans</a>
+      <a href="bitcoin-switch.html">For Bitcoin holders</a>
+      <a href="story.html" aria-current="page">The Story</a><a href="about.html">About</a>
+      <a href="index.html#coverage">Coverage</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn btn-primary btn-block" href="index.html#signup">Get Bitcoin Mobile</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero hero-sub pt-36 md:pt-48">
+        <div class="hero-glow" aria-hidden="true"></div><div class="hero-glow-2" aria-hidden="true"></div><div class="globe" aria-hidden="true"><canvas></canvas></div>
+      <div class="wrap wrap-narrow">
+        <div class="pill rise" style="--d:.05s"><span class="pill-dot"></span> The Story</div>
+        <h1 class="display-xl mt-7 rise" style="--d:.14s">Bitcoin exists because of what happened in <span class="grad-text">2008.</span></h1>
+        <p class="lead mt-7 rise" style="--d:.24s;max-width:560px">
+          How it started. What it stands for. Why a mobile carrier built on it follows.
+        </p>
+        <a href="#chap-1" class="scroll-cue rise" style="--d:.32s" aria-label="Scroll to the first chapter">Scroll to begin ↓</a>
+      </div>
+    </section>
+
+    <div class="wrap wrap-narrow">
+
+      <!-- WATCH THE MANGA -->
+      <aside class="reveal mb-16 mt-16" aria-label="Watch the story as a manga">
+        <a href="manga.html" class="group grid md:grid-cols-[minmax(0,1fr)_240px] rounded-[24px] overflow-hidden card-dark card-hover spot">
+          <div class="p-8 sm:p-10 flex flex-col justify-center gap-4 order-2 md:order-1">
+            <span class="inline-flex items-center gap-2 text-[13px] font-semibold" style="color:var(--accent)"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--accent)"></span> Watch · Visual edition</span>
+            <h2 class="display-s" style="color:#fff">Or watch the manga.</h2>
+            <p class="leading-relaxed" style="color:var(--text-on-dark-2);max-width:420px">The same story, drawn frame by frame. Fourteen scenes. Auto-play. About three minutes.</p>
+            <div class="flex flex-wrap gap-2" style="color:var(--text-on-dark-2);font-size:13px">
+              <span class="px-3 py-1 rounded-full border" style="border-color:var(--hairline-dark)">14 scenes</span>
+              <span class="px-3 py-1 rounded-full border" style="border-color:var(--hairline-dark)">Auto-play</span>
+              <span class="px-3 py-1 rounded-full border" style="border-color:var(--hairline-dark)">~3 min</span>
+            </div>
+            <span class="btn btn-glow mt-2 w-fit">Watch the manga →</span>
+          </div>
+          <div class="relative order-1 md:order-2 min-h-[180px] md:min-h-full overflow-hidden" style="background:#2c2c2e" aria-hidden="true">
+            <span class="absolute inset-0 grid place-items-center text-[9rem] font-bold leading-none select-none" style="color:rgba(247,147,26,.18)">₿</span>
+            <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white grid place-items-center transition-transform duration-300 group-hover:scale-105" style="color:#1d1d1f">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="ml-0.5" style="display:inline"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+        </a>
+      </aside>
+
+      <!-- CHAPTER 1 -->
+      <section class="chapter" id="chap-1">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">01 · The break</span><span class="d">2008</span></div>
+          <h2 class="display-l">When the system broke.</h2>
+          <div class="prose">
+            <p>In September 2008, Lehman Brothers collapsed. The financial crisis that followed was the worst since 1929. The response was unprecedented: trillions of dollars were created out of thin air to rescue the institutions that had caused the crisis.</p>
+            <p>Ordinary people lost homes, jobs, and savings. The institutions that lost everyone else’s money were rescued and then handed bonuses. Trust in the financial system collapsed. People started asking the obvious question: <strong>does money have to work this way?</strong></p>
+          </div>
+        </div>
+
+        <div class="reveal mt-12 card-dark p-8 sm:p-12 text-center stat-card">
+          <div class="small mb-8" style="font-weight:500">U.S. money supply (M2), 2008 to today</div>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-12">
+            <div>
+              <div class="small mb-2">2008</div>
+              <div class="num" style="font-size:clamp(3rem,4vw + 1rem,4.5rem);font-weight:700;letter-spacing:-.04em;line-height:1" data-counter="7.7" data-suffix="T" data-prefix="$" aria-hidden="true">$7.7T</div>
+            </div>
+            <div class="text-3xl rotate-90 sm:rotate-0" style="color:var(--line)" aria-hidden="true">→</div>
+            <div>
+              <div class="small mb-2">Today</div>
+              <div class="num grad-text" style="font-size:clamp(3rem,4vw + 1rem,4.5rem);font-weight:700;letter-spacing:-.04em;line-height:1" data-counter="21.7" data-suffix="T" data-prefix="$" aria-hidden="true">$21.7T</div>
+            </div>
+          </div>
+          <div class="badge mt-8" style="align-self:center">+182% in 16 years</div>
+          <div class="fine mt-4">Source: Federal Reserve M2 (St. Louis FRED). Approximate.</div>
+          <span class="sr-only">U.S. M2 money supply grew from 7.7 trillion dollars in 2008 to 21.7 trillion dollars today, an increase of 182 percent over 16 years.</span>
+        </div>
+      </section>
+
+      <!-- CHAPTER 2 -->
+      <section class="chapter" id="chap-2">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">02 · The proposal</span><span class="d">October 31, 2008</span></div>
+          <h2 class="display-l">A nine-page paper changed money.</h2>
+          <div class="prose">
+            <p>Six weeks after Lehman collapsed, an anonymous developer using the pseudonym <strong>Satoshi Nakamoto</strong> emailed a cryptography mailing list. Attached was a paper proposing electronic cash that could move directly between people, without a bank in the middle.</p>
+            <p>It solved a problem cryptographers had been chewing on for decades: how do you stop the same digital dollar from being spent twice without trusting a central authority? Satoshi’s answer used proof-of-work and a public ledger that anyone could verify.</p>
+          </div>
+        </div>
+
+        <figure class="reveal card card-pad spot mt-12" aria-label="Bitcoin whitepaper excerpt">
+          <div class="serif text-2xl font-semibold leading-snug mb-2" style="letter-spacing:-.01em">Bitcoin: A Peer-to-Peer Electronic Cash System</div>
+          <div class="serif italic muted mb-8">Satoshi Nakamoto · satoshin@gmx.com · www.bitcoin.org</div>
+          <p class="serif pl-6" style="font-size:18px;line-height:1.75;border-left:2px solid var(--accent)">"A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution."</p>
+        </figure>
+      </section>
+
+      <!-- CHAPTER 3 -->
+      <section class="chapter" id="chap-3">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">03 · The first block</span><span class="d">January 3, 2009</span></div>
+          <h2 class="display-l">The first block carried a message.</h2>
+          <div class="prose">
+            <p>Satoshi mined the first block of the Bitcoin network, known as the genesis block, and embedded a line of text inside it. It was a headline from <em>The Times</em> of London, printed that same day.</p>
+            <p>The headline proved the block could not have been created before that date. It also made clear what Bitcoin was responding to.</p>
+          </div>
+        </div>
+
+        <figure class="reveal mt-12 card-dark text-center p-10 sm:p-14">
+          <div class="small mb-8" style="font-weight:500;color:var(--accent)">Genesis Block · coinbase parameter</div>
+          <blockquote class="serif text-2xl sm:text-3xl font-semibold leading-snug" style="color:#fff;text-wrap:balance">“The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.”</blockquote>
+          <figcaption class="mt-8 fine">Embedded in block <code class="mono rounded-md px-2 py-1" style="background:rgba(255,255,255,.1);color:#fff">0</code>. Mined by Satoshi Nakamoto.</figcaption>
+        </figure>
+      </section>
+
+      <!-- CHAPTER 4 -->
+      <section class="chapter" id="chap-4">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">04 · Principles</span></div>
+          <h2 class="display-l">Four things Bitcoin actually stands for.</h2>
+          <div class="prose">
+            <p>Leave the price and the headlines aside. At the protocol level, Bitcoin comes down to four ideas. Tap each one to read more.</p>
+          </div>
+        </div>
+
+        <div class="reveal mt-12 principles" id="principles">
+          <div class="principle" data-toggle role="button" tabindex="0" aria-expanded="false" aria-controls="p1">
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex items-center gap-5" style="font-size:21px;font-weight:600;letter-spacing:-.02em"><span class="num" style="font-size:13px;color:var(--text-2);width:22px">01</span>Fixed supply.</div>
+              <svg class="icon principle__plus"><use href="#i-plus"/></svg>
+            </div>
+            <div class="principle__body" id="p1"><div><p class="body sm:pl-[42px]" style="font-size:17px">Only 21 million bitcoin will ever exist. The schedule is enforced by code that’s been running, untouched, since 2009. No central bank can vote to print more. The supply curve is the most predictable in monetary history.</p></div></div>
+          </div>
+          <div class="principle" data-toggle role="button" tabindex="0" aria-expanded="false" aria-controls="p2">
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex items-center gap-5" style="font-size:21px;font-weight:600;letter-spacing:-.02em"><span class="num" style="font-size:13px;color:var(--text-2);width:22px">02</span>Your keys, your coins.</div>
+              <svg class="icon principle__plus"><use href="#i-plus"/></svg>
+            </div>
+            <div class="principle__body" id="p2"><div><p class="body sm:pl-[42px]" style="font-size:17px">Bitcoin is the first money in history that you can fully self-custody at scale. If you hold the private keys, no bank, government, or company can freeze, seize, or roll back your money. The trade-off is that keeping them safe is your responsibility.</p></div></div>
+          </div>
+          <div class="principle" data-toggle role="button" tabindex="0" aria-expanded="false" aria-controls="p3">
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex items-center gap-5" style="font-size:21px;font-weight:600;letter-spacing:-.02em"><span class="num" style="font-size:13px;color:var(--text-2);width:22px">03</span>Permissionless.</div>
+              <svg class="icon principle__plus"><use href="#i-plus"/></svg>
+            </div>
+            <div class="principle__body" id="p3"><div><p class="body sm:pl-[42px]" style="font-size:17px">There’s no application form. No nationality requirement. No minimum balance. A teenager in Lagos and a hedge fund in New York interact with the exact same protocol on the exact same terms. Anyone can take part.</p></div></div>
+          </div>
+          <div class="principle" data-toggle role="button" tabindex="0" aria-expanded="false" aria-controls="p4">
+            <div class="flex items-center justify-between gap-4">
+              <div class="flex items-center gap-5" style="font-size:21px;font-weight:600;letter-spacing:-.02em"><span class="num" style="font-size:13px;color:var(--text-2);width:22px">04</span>Censorship-resistant.</div>
+              <svg class="icon principle__plus"><use href="#i-plus"/></svg>
+            </div>
+            <div class="principle__body" id="p4"><div><p class="body sm:pl-[42px]" style="font-size:17px">A valid Bitcoin transaction will be processed by the network whether or not any particular intermediary approves of it. There’s no payment processor that can decline you, no acquiring bank that can revoke your access. The network is the rail.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 5 -->
+      <section class="chapter" id="chap-5">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">05 · Sixteen years later</span></div>
+          <h2 class="display-l">From a mailing list to a global asset.</h2>
+          <div class="prose">
+            <p>Bitcoin started as a curiosity discussed by cryptographers. It is now held by individuals, public companies, and sovereign states. A short timeline of how it got here.</p>
+          </div>
+        </div>
+
+        <div class="tl mt-14">
+          <div class="tl__row reveal"><div class="tl__year"><time datetime="2009">2009</time></div><div class="title mb-1.5" style="font-size:19px">Network launches.</div><div class="body">Genesis block is mined. Bitcoin is a curiosity worth fractions of a cent.</div></div>
+          <div class="tl__row reveal"><div class="tl__year"><time datetime="2010">2010</time></div><div class="title mb-1.5" style="font-size:19px">First commercial transaction.</div><div class="body">A programmer in Florida pays 10,000 BTC for two pizzas. The price of "real-world" Bitcoin is born.</div></div>
+          <div class="tl__row reveal"><div class="tl__year"><time datetime="2013">2013</time></div><div class="title mb-1.5" style="font-size:19px">Cyprus bail-in.</div><div class="body">Cypriot depositors are forced to fund a bank rescue from their savings. Bitcoin’s price spikes as people search for an exit.</div></div>
+          <div class="tl__row reveal"><div class="tl__year"><time datetime="2016">2016</time></div><div class="title mb-1.5" style="font-size:19px">Lightning Network whitepaper.</div><div class="body">Joseph Poon and Thaddeus Dryja publish the design for instant, low-fee Bitcoin payments.</div></div>
+          <div class="tl__row reveal"><div class="tl__year"><time datetime="2021">2021</time></div><div class="title mb-1.5" style="font-size:19px">El Salvador adopts.</div><div class="body">First country to make Bitcoin legal tender. Citizens can pay taxes and merchants must accept it.</div></div>
+          <div class="tl__row reveal"><div class="tl__year"><time datetime="2024">2024</time></div><div class="title mb-1.5" style="font-size:19px">U.S. spot ETFs approved.</div><div class="body">After a decade of rejections, the SEC approves spot Bitcoin ETFs. Wall Street formally arrives.</div></div>
+          <div class="tl__row reveal"><div class="tl__year">Today</div><div class="title mb-1.5" style="font-size:19px">A multi-trillion-dollar asset.</div><div class="body">Held by individuals, public companies, and sovereign treasuries. Traded 24/7 across every time zone.</div></div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 6 -->
+      <section class="chapter" id="chap-6">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">06 · Mobile, broken</span></div>
+          <h2 class="display-l">Your phone bill has the same problem.</h2>
+          <div class="prose">
+            <p>Mobile is the most invasive consumer product you own. Your carrier knows where you sleep, who you call, what you stream, and where your kid is at three on a Tuesday. They keep it for years, and most of it gets sold.</p>
+            <p>Until the FTC stepped in last year, a single broker called <strong>Mobilewalla</strong> had paired <strong>500 million phone IDs</strong> with precise location histories and sold them to whoever was buying. ICE bought a similar tool from a vendor called Penlink to track specific people in real time. This sub-industry has existed for as long as smartphones have.</p>
+            <p>The systems underneath were built for a different era, when every party on the network was assumed trustworthy and nobody asked for privacy. Fifty years and several generations of wireless later, those systems have barely changed. Only the marketing has.</p>
+          </div>
+        </div>
+        <div class="reveal mt-12 card-alt p-8 sm:p-10">
+          <p class="display-s" style="font-weight:600">Bitcoin solved a problem like this in 2008 by building money on a network that doesn’t require trust. <span class="grad-text">Bitcoin Mobile applies the same instinct to your phone bill.</span></p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 7 -->
+      <section class="chapter" id="chap-7">
+        <div class="reveal">
+          <div class="chap-meta"><span class="n">07 · Why we built this</span></div>
+          <h2 class="display-l">Same principles. Applied to your phone bill.</h2>
+          <div class="prose">
+            <p>Bitcoin Mobile takes the principles that made Bitcoin matter and applies them to a category that hasn’t changed much in fifty years. They shape how the product actually works.</p>
+          </div>
+        </div>
+
+        <div class="reveal card overflow-hidden mt-12">
+          <table class="map">
+            <thead>
+              <tr>
+                <th scope="col" class="muted">Bitcoin principle</th>
+                <th scope="col" class="accent-text">Bitcoin Mobile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Fixed supply. No debasement.</th><td><strong>Fixed pricing.</strong> $54.99 or $84.99. No surprise fees.</td></tr>
+              <tr><th scope="row">Your keys, your coins.</th><td><strong>Your sats, your wallet.</strong> BTC routed to an address you control at billing. No internal account.</td></tr>
+              <tr><th scope="row">Permissionless.</th><td>No credit checks. Activate by eSIM in five minutes. Use any compatible phone.</td></tr>
+              <tr><th scope="row">Censorship-resistant.</th><td>No lock-in. Month-to-month. Port your number out anytime. We never hold it hostage.</td></tr>
+              <tr><th scope="row">Self-sovereign identity.</th><td>You prove who you are without handing over your data. Built on World Mobile’s on-chain identity layer. The network verifies credentials cryptographically and does not hand your personal information to whoever asks.</td></tr>
+              <tr><th scope="row">Trust-minimized infrastructure.</th><td>A network you can verify. Coverage comes from independently-operated AirNodes rather than one carrier you have to trust. The chain that routes your traffic is auditable, end to end.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="reveal mt-20">
+          <h3 class="display-m mb-6">Why the network matters as much as the rewards.</h3>
+          <div class="prose">
+            <p>Bitcoin rewards are a good reason to switch. The network is a good reason to stay.</p>
+            <p>Bitcoin Mobile runs on <strong>World Mobile</strong>, a decentralized telecom network where coverage is provided by independently-operated <strong>AirNodes</strong> instead of a single legacy carrier. Underneath it runs a blockchain built for telecom, so routing decisions, authentication and payments can all be verified. Identity is handled with cryptography, billing is recorded on-chain, and anyone can audit how the network operates.</p>
+            <p>Switching means moving to a network you can verify, with <strong>rewards paid into a wallet you control</strong>.</p>
+          </div>
+        </div>
+
+        <!-- CLOSING CTA + FORM -->
+        <div class="reveal mt-20 card-dark text-center p-8 sm:p-14" id="story-signup">
+          <h3 class="display-m mb-4" style="color:#fff">You’ve read the case. <span class="grad-text">Get on the network.</span></h3>
+          <p class="mb-10" style="color:var(--text-on-dark-2)">Real Bitcoin. Self-custody. A network you can verify.</p>
+
+          <form id="story-form" class="mx-auto flex flex-col gap-3 text-left" style="max-width:380px" novalidate>
+            <label for="story-name" class="sr-only">Full name</label>
+            <input id="story-name" type="text" name="name" placeholder="Full name" required maxlength="100" autocomplete="name" class="input input-dark" style="margin-top:0">
+            <label for="story-email" class="sr-only">Email</label>
+            <input id="story-email" type="email" name="email" placeholder="Email" required autocomplete="email" class="input input-dark" style="margin-top:0">
+            <button type="submit" class="btn btn-glow btn-lg btn-block mt-2">Get Bitcoin Mobile</button>
+            <p class="form-error" id="story-error" role="alert"></p>
+          </form>
+
+          <div id="story-success" class="hidden text-center pt-2" role="status">
+            <div class="mx-auto w-14 h-14 rounded-full grid place-items-center" style="background:var(--accent);color:#1d1d1f"><svg class="icon" style="stroke-width:2.5"><use href="#i-check"/></svg></div>
+            <h4 class="display-s mt-5" style="color:#fff">You’re in.</h4>
+            <p class="mt-2" style="color:var(--text-on-dark-2)">Position <span class="font-semibold" style="color:var(--accent)" id="story-pos">#1</span>. We’ll email when activation opens.</p>
+            <label for="story-referral-url" class="block mt-8 fine text-left mx-auto" style="max-width:380px;font-weight:500">Your referral link</label>
+            <div class="flex gap-2 mt-2 mx-auto" style="max-width:380px">
+              <input type="text" id="story-referral-url" readonly class="input input-dark flex-1 min-w-0" style="margin-top:0;font-size:14px;min-height:44px">
+              <button type="button" id="story-copy" class="btn btn-ghost-dark">Copy</button>
+            </div>
+          </div>
+
+          <p class="mt-8 fine">Want to compare plans first? <a href="index.html#plans" style="color:var(--accent)" class="underline underline-offset-2">See plans →</a></p>
+        </div>
+      </section>
+
+      <div class="text-center pt-16 pb-16" style="border-top:1px solid var(--hairline)" role="doc-endnote"><span class="fine" style="letter-spacing:.12em;text-transform:uppercase" aria-hidden="true">End</span><span class="sr-only">End of article.</span></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap wrap-wide">
+      <div class="footer-grid">
+        <div class="space-y-3">
+          <div class="brand"><span class="brand-mark">₿</span><span>Bitcoin<b>Mobile</b></span></div>
+          <p style="max-width:340px">Nationwide 5G that pays you in Bitcoin. Operated by CUEN on the World Mobile network.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="index.html#plans">Plans</a><a href="index.html#calculator">Rewards</a><a href="bitcoin-switch.html">For Bitcoin holders</a><a href="index.html#faq">FAQ</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="story.html">The Story</a><a href="about.html">About</a><a href="index.html#coverage">Coverage</a><a href="#">Terms of Service</a><a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>© 2026 Bitcoin Mobile by CUEN · World Mobile Network</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    'use strict';
+    // ---- SETTINGS ----
+    // true  = demo mode: the form shows a fake success (use for previews).
+    // false = real mode: the form posts to API_URL (set false on your live site).
+    var DEMO_MODE = true;
+    var API_URL = '/api/signup';
+
+    function $(s,r){return (r||document).querySelector(s)}
+    function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Mobile menu
+    var menu=$('#menu'),mb=$('#menuBtn');
+    mb.addEventListener('click',function(){var h=menu.classList.toggle('hidden');mb.setAttribute('aria-expanded',h?'false':'true')});
+    $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.classList.add('hidden');mb.setAttribute('aria-expanded','false')})});
+
+    // Reveal on scroll
+    var els=$$('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+      els.forEach(function(el){io.observe(el)});
+    } else { els.forEach(function(el){el.classList.add('in')}); }
+
+    // Animated counters
+    function animateCounter(el){
+      var target=parseFloat(el.getAttribute('data-counter')),pre=el.getAttribute('data-prefix')||'',suf=el.getAttribute('data-suffix')||'';
+      if(reduce){el.textContent=pre+target+suf;return}
+      var start=performance.now(),dur=1400;
+      function step(now){var p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3);el.textContent=pre+(target*ease).toFixed(1)+suf;if(p<1)requestAnimationFrame(step);else el.textContent=pre+target+suf}
+      requestAnimationFrame(step);
+    }
+    if('IntersectionObserver' in window){
+      var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){$$('[data-counter]',e.target).forEach(animateCounter);co.unobserve(e.target)}})},{threshold:.4});
+      $$('.stat-card').forEach(function(el){co.observe(el)});
+    }
+
+    // Chapter dots: highlight current chapter
+    var links=$$('#cdots a'),chaps=$$('section[id^="chap-"]');
+    if('IntersectionObserver' in window&&links.length){
+      var cobs=new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+e.target.id;a.firstElementChild.classList.toggle('active',on);if(on)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')})}
+      })},{rootMargin:'-40% 0px -50% 0px'});
+      chaps.forEach(function(c){cobs.observe(c)});
+    }
+
+    // Principles accordion (keyboard friendly)
+    $$('.principle[data-toggle]').forEach(function(p){
+      function toggle(){var open=p.classList.toggle('is-open');p.setAttribute('aria-expanded',open?'true':'false')}
+      p.addEventListener('click',toggle);
+      p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+    });
+
+    // Hide sticky CTA while the signup block is on screen
+    var sc=$('#stickyCta'),su=$('#story-signup');
+    if(sc&&su&&'IntersectionObserver' in window){new IntersectionObserver(function(es){sc.style.transform=es[0].isIntersecting?'translateY(120%)':''},{threshold:.15}).observe(su)}
+
+    // Waitlist form
+    var form=$('#story-form');
+    if(form){
+      var errEl=$('#story-error'),successEl=$('#story-success');
+      var ref=new URLSearchParams(window.location.search).get('ref')||'';
+      function showSuccess(pos,url){
+        form.classList.add('hidden');successEl.classList.remove('hidden');
+        $('#story-pos').textContent='#'+pos;$('#story-referral-url').value=url;
+      }
+      form.addEventListener('submit',function(e){
+        e.preventDefault();errEl.textContent='';
+        var btn=form.querySelector('button[type="submit"]');
+        var name=form.querySelector('input[name="name"]').value.trim();
+        var email=form.querySelector('input[name="email"]').value.trim();
+        if(!name){errEl.textContent='Name required.';return}
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){errEl.textContent='Valid email required.';return}
+        if(DEMO_MODE){showSuccess(1,location.origin+location.pathname+'?ref=demo');return}
+        btn.textContent='Joining…';btn.disabled=true;
+        var url=ref?API_URL+'?ref='+encodeURIComponent(ref):API_URL;
+        fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,source:'bitcoin-story'})})
+          .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d}})})
+          .then(function(r){
+            if(!r.ok){errEl.textContent=r.d.error||'Something went wrong.';btn.textContent='Get Bitcoin Mobile';btn.disabled=false;return}
+            showSuccess(r.d.position,r.d.referralUrl);
+          })
+          .catch(function(){errEl.textContent='Network error.';btn.textContent='Get Bitcoin Mobile';btn.disabled=false});
+      });
+      var copyBtn=$('#story-copy');
+      if(copyBtn){copyBtn.addEventListener('click',function(){
+        var input=$('#story-referral-url');
+        try{input.select();navigator.clipboard.writeText(input.value)}catch(e){}
+        copyBtn.textContent='Copied!';setTimeout(function(){copyBtn.textContent='Copy'},2000);
+      })}
+    }
+  })();
+  </script>
+</body>
+</html>

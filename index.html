@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bitcoin Mobile | Nationwide 5G That Pays You in Bitcoin</title>
+  <meta name="description" content="Nationwide 5G wireless from $54.99/mo. Earn up to 8% back in BTC, sent to a self-custody wallet you control. No contract.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F7931A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' font-weight='bold' fill='%23fff' font-family='Arial'%3E%E2%82%BF%3C/text%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>if (window.tailwind) tailwind.config = { corePlugins:{ preflight:false } };</script>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/premium.css?v=4">
+  <script src="assets/premium.js" defer></script>
+  <style>
+    /* Hero device — Apple hardware treatment */
+    .device-stage{position:relative;display:flex;justify-content:center;margin-top:80px}
+    .device{position:relative;width:300px;border-radius:56px;padding:10px;border:3px solid transparent;
+      background:linear-gradient(#0a0a0b,#0a0a0b) padding-box,
+        linear-gradient(140deg,#e3e3e8 0%,#8e8e93 18%,#f5f5f7 38%,#6e6e73 58%,#d1d1d6 78%,#9a9aa0 100%) border-box;
+      box-shadow:0 0 0 1px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.08),
+        0 2px 4px rgba(0,0,0,.04),0 12px 24px -8px rgba(0,0,0,.08),0 25px 60px rgba(0,0,0,.12)}
+    .device::before,.device::after{content:"";position:absolute;width:4px;border-radius:2px;
+      background:linear-gradient(90deg,#8e8e93,#d1d1d6 60%,#a1a1a6)}
+    .device::before{left:-7px;top:118px;height:56px;box-shadow:0 -58px 0 -16px #b8b8bd,0 72px 0 0 #b8b8bd}
+    .device::after{right:-7px;top:150px;height:84px}
+    .device-screen{position:relative;border-radius:43px;background:#fff;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+    .device-island{height:40px;display:flex;justify-content:center;align-items:center}
+    .device-island span{width:96px;height:28px;border-radius:20px;background:#000}
+    .device-row{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;background:var(--bg-alt);font-size:13px;color:#1d1d1f}
+    .device-row .muted{color:#6e6e73}
+    .device-row b:not(.accent-text){font-weight:600;color:#1d1d1f}
+    /* Hero type */
+    .hero-lead{font-size:20px;line-height:1.45;color:#6e6e73;letter-spacing:-.012em;max-width:640px;text-wrap:balance}
+    @media (min-width:768px){.hero-lead{font-size:21px}}
+    .hero-link{font-size:17px;letter-spacing:-.015em}
+    .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;font-size:14px;color:var(--text-2)}
+    .trust span+span::before{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--line);margin-right:28px;vertical-align:middle}
+    @media (max-width:640px){.trust span+span::before{display:none}}
+    .step-num{font-size:13px;font-weight:600;color:var(--text-2);font-variant-numeric:tabular-nums}
+    /* Flow */
+    .flow{display:flex;flex-direction:column;align-items:center}
+    .flow-node{text-align:center;width:150px}
+    .flow-node .icon-tile{width:60px;height:60px;border-radius:18px;margin:0 auto}
+    .flow-node .icon-tile.is-btc{background:var(--accent);color:#fff;font-weight:700;font-size:26px}
+    .flow-node .icon-tile.is-dark{background:var(--text);color:#fff}
+    .flow-line{width:1px;height:36px;background:var(--line);margin:12px 0}
+    @media (min-width:768px){.flow{flex-direction:row;align-items:flex-start}.flow-line{flex:1;height:1px;width:auto;margin:30px 0 0}}
+    /* Calculator */
+    .calc-result{background:var(--bg-dark);color:#fff;border-radius:20px;padding:40px 36px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+    .label-row{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+    .label{font-size:14px;font-weight:500;color:var(--text-2)}
+  </style>
+</head>
+
+<body>
+  <a href="#top" class="skip">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2.5"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+    <symbol id="i-devices" viewBox="0 0 24 24"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-4"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></symbol>
+  </svg>
+
+  <div id="stickyCta" class="sticky-cta">
+    <a href="#signup" class="btn btn-primary btn-block">Join early access →</a>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav nav-dark">
+    <div class="wrap wrap-wide nav-inner">
+      <a href="#top" class="brand"><span class="brand-mark">₿</span><span>Bitcoin<b>Mobile</b></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#plans">Plans</a>
+        <a href="#calculator">Rewards</a>
+        <a href="bitcoin-switch.html">For Bitcoin holders</a>
+        <a href="#coverage">Coverage</a>
+        <a href="story.html">Story</a><a href="about.html">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#signup" class="btn btn-primary btn-sm hidden sm:inline-flex">Join early access</a>
+        <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+          <svg class="icon"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="menu hidden">
+      <a href="#how">How it works</a>
+      <a href="#plans">Plans</a>
+      <a href="#calculator">Rewards calculator</a>
+      <a href="bitcoin-switch.html">For Bitcoin holders</a>
+      <a href="#coverage">Coverage</a>
+      <a href="story.html">Story</a><a href="about.html">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-block" href="#signup">Join early access</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section id="hero" class="hero pt-36 pb-24 md:pt-44 md:pb-28">
+      <div class="hero-glow" aria-hidden="true"></div><div class="hero-glow-2" aria-hidden="true"></div><div class="globe" aria-hidden="true"><canvas></canvas></div>
+      <div class="wrap text-center">
+        <div class="pill rise" style="--d:.05s"><span class="pill-dot"></span> Early access is open</div>
+        <h1 class="display-xl mt-7 rise" style="--d:.1s"><span class="h-line"><span style="--d:.15s">Your phone bill,</span></span><span class="h-line"><span style="--d:.28s">now <span class="grad-text">stacking sats.</span></span></span></h1>
+        <p class="hero-lead mt-7 mx-auto rise" style="--d:.24s">
+          Nationwide 5G from $54.99/mo, no contract.<br class="hidden sm:inline">
+          Earn up to 8% back in Bitcoin, sent straight to a self-custody wallet you control.
+        </p>
+        <div class="cta-row justify-center mt-10 rise" style="--d:.32s">
+          <a href="#signup" class="btn btn-glow btn-lg">Join early access</a>
+          <a href="#calculator" class="link link-chevron hero-link">See what you'd earn<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="device-stage flex-col items-center rise-phone">
+          <div class="device" id="device">
+            <div class="device-screen text-left">
+              <div class="device-island"><span></span></div>
+              <div class="px-5 pb-6 pt-3 space-y-4">
+                <div class="flex justify-between items-center" style="font-size:11px;font-weight:500;color:#1d1d1f">
+                  <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full" style="background:var(--positive)"></span>5G connected</span>
+                  <span>Essential</span>
+                </div>
+                <div class="rounded-2xl p-5" style="background:#1d1d1f;color:#fff">
+                  <div style="font-size:12px;font-weight:500;color:#a1a1a6">Rewards this cycle</div>
+                  <div class="num mt-1" style="font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1.1"><span id="heroSats" style="color:#F7931A">0</span> <span style="font-size:15px;font-weight:500;color:#a1a1a6">sats</span></div>
+                  <div style="font-size:11px;color:#a1a1a6" class="mt-1">4% of $54.99 plan, paid in BTC</div>
+                </div>
+                <div class="space-y-2">
+                  <div class="device-row"><span class="muted">Data</span><b style="font-weight:600">25 GB</b></div>
+                  <div class="device-row"><span class="muted">Hotspot</span><b style="font-weight:600">10 GB</b></div>
+                  <div class="device-row"><span class="muted">Payout to</span><b style="font-weight:600" class="accent-text">Your wallet</b></div>
+                </div>
+                <div class="text-center" style="font-size:10px;color:var(--text-2)">Illustrative screen. Amounts vary with BTC price.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-band" aria-label="Highlights">
+      <div class="marquee"><div class="marquee-track">
+        <div class="marquee-group"><span>Operated by CUEN</span><span>OTCQB-listed</span><span>On the World Mobile network</span><span>Nationwide 5G</span><span>Self-custody rewards</span><span>No contract</span></div>
+        <div class="marquee-group" aria-hidden="true"><span>Operated by CUEN</span><span>OTCQB-listed</span><span>On the World Mobile network</span><span>Nationwide 5G</span><span>Self-custody rewards</span><span>No contract</span></div>
+      </div></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-band py-16 md:py-24">
+      <div class="wrap">
+        <div class="stat-grid reveal">
+          <div class="stat"><div class="stat-value" data-count="8" data-prefix="Up to " data-suffix="%">Up to 8%</div><div class="stat-label">back in BTC</div></div>
+          <div class="stat"><div class="stat-value" data-count="54.99" data-prefix="$" data-dec="2">$54.99</div><div class="stat-label">plans from, per month</div></div>
+          <div class="stat"><div class="stat-value">0</div><div class="stat-label">contracts</div></div>
+          <div class="stat"><div class="stat-value" data-count="100" data-suffix="%">100%</div><div class="stat-label">self-custody payouts</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2 class="display-l">Set up in three steps.</h2>
+        </div>
+        <div class="ss">
+          <div class="ss-phone-col" aria-hidden="true">
+            <div class="device ss-device">
+              <div class="device-screen">
+                <div class="device-island"><span></span></div>
+                <div class="ss-screen is-active" data-screen="0">
+                  <div class="ss-bar"><span>9:41</span><span>eSIM ready</span></div>
+                  <div class="ss-title">Choose a plan</div>
+                  <div class="ss-opt is-sel"><div>Essential<small>25 GB · 4% back</small></div><b>$54.99</b></div>
+                  <div class="ss-opt"><div>Premium<small>Unlimited · 8% back</small></div><b>$84.99</b></div>
+                  <div class="ss-btn">Activate eSIM</div>
+                </div>
+                <div class="ss-screen" data-screen="1">
+                  <div class="ss-bar"><span>9:41</span><span>Essential</span></div>
+                  <div class="ss-title">Payout address</div>
+                  <div class="ss-seg"><span class="on">Lightning</span><span>On-chain</span></div>
+                  <div class="ss-field">Your address<b>you@yourwallet.com</b></div>
+                  <div class="ss-note"><svg class="icon icon-sm" style="color:#B35C00"><use href="#i-key"/></svg>You hold the keys. We never hold your rewards.</div>
+                  <div class="ss-btn">Save address</div>
+                </div>
+                <div class="ss-screen" data-screen="2">
+                  <div class="ss-bar"><span>9:41</span><span>5G</span></div>
+                  <div class="ss-title">Rewards</div>
+                  <div class="ss-big"><div class="k">Sent this cycle</div><div class="v">+2,200 sats</div><div class="k">4% of $54.99, paid to your wallet</div></div>
+                  <div class="ss-row"><span>Cycle 3</span><b>+2,200 sats</b></div>
+                  <div class="ss-row"><span>Cycle 2</span><b>+2,200 sats</b></div>
+                  <div class="ss-row"><span>Cycle 1</span><b>+2,200 sats</b></div>
+                  <div class="ss-fine">Illustrative screen. Amounts vary with BTC price.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ss-steps">
+            <div class="ss-step card card-pad feature is-active" data-step="0">
+              <div class="ss-head flex items-center justify-between mb-10">
+                <div class="icon-tile"><svg class="icon"><use href="#i-phone"/></svg></div>
+                <span class="step-num">01</span>
+              </div>
+              <span class="ss-k">Step 1</span>
+              <h3 class="title mb-3">Pick a plan, get an eSIM</h3>
+              <p class="body">Choose Essential or Premium and activate by eSIM. No store visit, no contract.</p>
+            </div>
+            <div class="ss-step card card-pad feature" data-step="1">
+              <div class="ss-head flex items-center justify-between mb-10">
+                <div class="icon-tile"><svg class="icon"><use href="#i-key"/></svg></div>
+                <span class="step-num">02</span>
+              </div>
+              <span class="ss-k">Step 2</span>
+              <h3 class="title mb-3">Add your wallet address</h3>
+              <p class="body">Paste a Lightning or on-chain address you control. We never hold your rewards.</p>
+            </div>
+            <div class="ss-step card card-pad feature" data-step="2">
+              <div class="ss-head flex items-center justify-between mb-10">
+                <div class="icon-tile"><svg class="icon"><use href="#i-zap"/></svg></div>
+                <span class="step-num">03</span>
+              </div>
+              <span class="ss-k">Step 3</span>
+              <h3 class="title mb-3">Stay connected, earn BTC</h3>
+              <p class="body">Each billing cycle, your plan's reward percentage is sent to your wallet in Bitcoin.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal mt-16 card card-pad flow-card spot">
+          <div class="text-center mb-12">
+            <p class="eyebrow">Follow your sats</p>
+            <h3 class="display-s">From your bill to your wallet</h3>
+          </div>
+          <div class="flow">
+            <div class="flow-node"><div class="icon-tile"><svg class="icon"><use href="#i-phone"/></svg></div><div class="mt-4" style="font-size:15px;font-weight:500">Your monthly plan</div></div>
+            <div class="flow-line" aria-hidden="true"></div>
+            <div class="flow-node"><div class="icon-tile is-btc">₿</div><div class="mt-4" style="font-size:15px;font-weight:500">Reward in BTC</div></div>
+            <div class="flow-line" aria-hidden="true"></div>
+            <div class="flow-node"><div class="icon-tile"><svg class="icon"><use href="#i-zap"/></svg></div><div class="mt-4" style="font-size:15px;font-weight:500">Lightning or on-chain</div></div>
+            <div class="flow-line" aria-hidden="true"></div>
+            <div class="flow-node"><div class="icon-tile is-dark"><svg class="icon"><use href="#i-key"/></svg></div><div class="mt-4" style="font-size:15px;font-weight:500">Your wallet, your keys</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Plans</p>
+          <h2 class="display-l">Two simple plans.</h2>
+          <p class="lead mt-5">No contracts. Instant eSIM activation. The more you pay for performance, the more you stack.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 lg:gap-8 items-stretch mx-auto" style="max-width:840px">
+          <div class="reveal plan plan-featured spot">
+            <div class="plan-flag">Most popular</div>
+            <h3 class="display-s">Essential</h3>
+            <p class="small mt-1">25 GB for everyday HODLers</p>
+            <div class="plan-price">$54.99<span>/mo</span></div>
+            <div class="badge mt-5">4% back in BTC</div>
+            <ul class="check-list mt-8 flex-1">
+              <li><svg class="icon"><use href="#i-check"/></svg>25 GB high-speed 5G data</li><li><svg class="icon"><use href="#i-check"/></svg>10 GB hotspot included</li><li><svg class="icon"><use href="#i-check"/></svg>100 min international calling</li><li><svg class="icon"><use href="#i-check"/></svg>Free eSIM activation</li><li><svg class="icon"><use href="#i-check"/></svg>ExpressVPN included</li>
+            </ul>
+            <a href="#signup" data-plan="essential" class="plan-pick btn btn-glow btn-block mt-10">Get Essential</a>
+          </div>
+
+          <div class="reveal plan spot lift">
+            <div class="plan-flag" aria-hidden="true">&nbsp;</div>
+            <h3 class="display-s">Premium</h3>
+            <p class="small mt-1">Best performance. Max sats.</p>
+            <div class="plan-price">$84.99<span>/mo</span></div>
+            <div class="badge mt-5">8% back in BTC</div>
+            <ul class="check-list mt-8 flex-1">
+              <li><svg class="icon"><use href="#i-check"/></svg>Unlimited data</li><li><svg class="icon"><use href="#i-check"/></svg>20 GB hotspot included</li><li><svg class="icon"><use href="#i-check"/></svg>Roaming credit included</li><li><svg class="icon"><use href="#i-check"/></svg>Free eSIM activation</li><li><svg class="icon"><use href="#i-check"/></svg>ExpressVPN included</li>
+            </ul>
+            <a href="#signup" data-plan="premium" class="plan-pick btn btn-quiet btn-block mt-10">Get Premium</a>
+          </div>
+        </div>
+        <p class="fine text-center mt-12 mx-auto" style="max-width:640px">Bitcoin rewards are a percentage of your monthly plan price, paid in BTC at the market rate when issued. Bitcoin's value can rise or fall. Rewards are not a guarantee of future value. See Terms for eligibility and limits.</p>
+      </div>
+    </section>
+
+    <!-- EXPRESSVPN -->
+    <section id="vpn" class="section section-alt vpn">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Included with every plan</p>
+          <h2 class="display-l">On public Wi-Fi, your phone is an open book. <span class="grad-text">Close it.</span></h2>
+          <p class="lead mt-5">Every Bitcoin Mobile plan comes with ExpressVPN. Turn it on once and everything your phone sends is locked with 256 bit AES, the encryption standard banks and governments rely on.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
+          <div class="reveal card vpn-cmp spot">
+            <div class="vpn-cmp-head"><div>Without a VPN</div><div class="yes">With ExpressVPN</div></div>
+            <div class="vpn-cmp-where">On cafe, hotel and airport Wi-Fi</div>
+            <div class="vpn-cmp-row"><div><svg class="icon"><use href="#i-x"/></svg><span>Others on the network can see which sites you connect to and read anything that is not encrypted.</span></div><div class="yes"><svg class="icon"><use href="#i-check"/></svg><span>All they see is scrambled data. Nothing to read, nothing to steal.</span></div></div>
+            <div class="vpn-cmp-where">Sites and apps you open</div>
+            <div class="vpn-cmp-row"><div><svg class="icon"><use href="#i-x"/></svg><span>They see your real IP address and roughly where you are.</span></div><div class="yes"><svg class="icon"><use href="#i-check"/></svg><span>They see a shared ExpressVPN address, not yours.</span></div></div>
+            <div class="vpn-cmp-where">Your internet provider</div>
+            <div class="vpn-cmp-row"><div><svg class="icon"><use href="#i-x"/></svg><span>It can log every site you visit.</span></div><div class="yes"><svg class="icon"><use href="#i-check"/></svg><span>It sees that you use a VPN. Not where you go.</span></div></div>
+          </div>
+
+          <div class="reveal card vpn-card spot" aria-hidden="true">
+            <div class="vpn-lockup">
+              <span class="vpn-brand"><span class="vpn-logo is-btc">₿</span><span>Bitcoin<b>Mobile</b></span></span>
+              <span class="vpn-x">+</span>
+              <span class="vpn-brand"><img src="assets/expressvpn-logo.svg" alt="" width="34" height="34" style="flex:none;border-radius:50%;box-shadow:0 8px 24px -8px rgba(218,57,64,.7)"><span>ExpressVPN</span></span>
+            </div>
+
+            <div class="vpn-tunnel">
+              <div class="vpn-node"><div class="icon-tile"><svg class="icon"><use href="#i-phone"/></svg></div><span>Your phone</span></div>
+              <div class="vpn-line"></div>
+              <div class="vpn-shield"><svg class="icon"><use href="#i-shield"/></svg></div>
+              <div class="vpn-line"></div>
+              <div class="vpn-node"><div class="icon-tile"><svg class="icon"><use href="#i-globe"/></svg></div><span>Internet</span></div>
+            </div>
+
+            <div class="vpn-status">
+              <div><span>Status</span><b class="on">Protected</b></div>
+              <div><span>IP address</span><b>Hidden</b></div>
+              <div><span>Tunnel</span><b>Encrypted</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal vpn-stats mt-6 lg:mt-14">
+          <div><b class="grad-text">256 bit</b><span>AES encryption on every connection</span></div>
+          <div><b class="grad-text">113</b><span>countries with ExpressVPN servers</span></div>
+          <div><b class="grad-text">Zero</b><span>browsing or connection logs stored</span></div>
+          <div><b class="grad-text">3</b><span>independent auditors: KPMG, PwC, Cure53</span></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8 mt-6 lg:mt-14">
+          <div class="reveal card vpn-feature spot lift"><div class="icon-tile"><svg class="icon"><use href="#i-power"/></svg></div><h3 class="title">A kill switch that never sleeps</h3><p class="small mt-2">If the VPN drops, your internet pauses until protection is back. On iPhone it is always on.</p></div>
+          <div class="reveal card vpn-feature spot lift"><div class="icon-tile"><svg class="icon"><use href="#i-server"/></svg></div><h3 class="title">Servers that forget</h3><p class="small mt-2">ExpressVPN servers run on memory only. Every reboot wipes them clean.</p></div>
+          <div class="reveal card vpn-feature spot lift"><div class="icon-tile"><svg class="icon"><use href="#i-eyeoff"/></svg></div><h3 class="title">Trackers and bad sites blocked</h3><p class="small mt-2">Built in blocking for trackers and known malicious sites.</p></div>
+          <div class="reveal card vpn-feature spot lift"><div class="icon-tile" style="font-weight:700;font-size:22px">₿</div><h3 class="title">Your stack stays your business</h3><p class="small mt-2">Open your wallet or exchange on any network without showing your home IP address.</p></div>
+        </div>
+
+        <div class="reveal card vpn-honest mt-6 lg:mt-14">
+          <div class="icon-tile"><svg class="icon"><use href="#i-shield"/></svg></div>
+          <p class="body"><b>Straight talk.</b> A VPN protects your connection, not your choices. It cannot stop a scam link you decide to open or an app you decide to install. What it does is close the door most people leave wide open: the network between your phone and the internet.</p>
+        </div>
+
+        <div class="text-center mt-12 lg:mt-16"><a href="#plans" class="btn btn-glow btn-lg">Get protected with a plan</a></div>
+        <p class="fine mt-8 text-center">Figures are ExpressVPN's published claims as of November 2026. Features vary by device and ExpressVPN plan. ExpressVPN is a trademark of its owner.</p>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section id="calculator" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Rewards calculator</p>
+          <h2 class="display-l">What would you earn?</h2>
+          <p class="lead mt-5">Pick a plan, a time frame and a BTC price assumption.</p>
+        </div>
+
+        <div class="reveal card p-3 sm:p-4 grid md:grid-cols-2 gap-4">
+          <div class="space-y-9 p-5 sm:p-8">
+            <div>
+              <div class="label mb-3">Plan</div>
+              <div class="segmented" role="group" aria-label="Plan" style="grid-template-columns:repeat(2,1fr)">
+                <button class="seg active" data-k="essential">Essential</button>
+                <button class="seg" data-k="premium">Premium</button>
+              </div>
+              <div class="small mt-3"><span id="cFee">$54.99</span>/mo · <span id="cRate" class="accent-text" style="font-weight:600">4% back</span></div>
+            </div>
+            <div>
+              <div class="label-row"><label for="cMonths" class="label">Time frame</label><b id="cMonthsLbl" class="num" style="font-weight:600">12 months</b></div>
+              <input id="cMonths" type="range" min="1" max="36" step="1" value="12">
+            </div>
+            <div>
+              <div class="label-row"><label for="cPrice" class="label">Assumed BTC price</label><b id="cPriceLbl" class="num" style="font-weight:600">$100,000</b></div>
+              <input id="cPrice" type="range" min="20000" max="300000" step="5000" value="100000">
+              <p class="fine mt-1">An assumption you control, not a forecast or the live price.</p>
+            </div>
+          </div>
+
+          <div class="calc-result">
+            <div style="font-size:14px;font-weight:500;color:var(--accent)">You'd stack</div>
+            <div class="num mt-2 grad-text" style="font-size:clamp(3rem,4vw + 1rem,4.25rem);font-weight:700;letter-spacing:-.04em;line-height:1.05" id="cSats">0</div>
+            <div style="color:var(--text-on-dark-2)" class="mt-1">sats</div>
+            <div class="my-7" style="height:1px;background:var(--hairline-dark)"></div>
+            <div class="num" style="font-size:30px;font-weight:600;letter-spacing:-.025em" id="cUsd">$0.00</div>
+            <div class="mt-1" style="font-size:14px;color:var(--text-on-dark-2)">in rewards over <span id="cM2">12</span> months at the assumed price</div>
+          </div>
+        </div>
+
+        <div class="reveal card card-pad mt-4">
+          <div class="flex flex-wrap justify-between items-baseline gap-2 mb-6">
+            <div class="title" style="font-size:19px">Your stack over time</div>
+            <div class="fine">Cumulative sats at the assumed price</div>
+          </div>
+          <svg id="cChart" viewBox="0 0 600 190" class="w-full h-auto" role="img" aria-label="Chart of cumulative sats over time" style="font-family:var(--font)">
+            <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7931A" stop-opacity=".22"/><stop offset="1" stop-color="#F7931A" stop-opacity="0"/></linearGradient></defs>
+            <g id="cGrid"></g>
+            <path id="cArea" fill="url(#cg)"/>
+            <path id="cLine" fill="none" stroke="#F7931A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle id="cDot" r="5.5" fill="#fff" stroke="#F7931A" stroke-width="2.5"/>
+            <text id="cEnd" font-size="12" font-weight="600" fill="#1d1d1f" text-anchor="end"></text>
+            <text x="30" y="184" font-size="11" fill="#6e6e73">Month 0</text>
+            <text id="cXEnd" x="570" y="184" font-size="11" fill="#6e6e73" text-anchor="end"></text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal" style="margin-bottom:48px"><h2 class="display-l">Compare plans</h2></div>
+        <div class="reveal overflow-x-auto table-card">
+          <table class="table min-w-[420px]">
+            <thead>
+              <tr>
+                <th><span class="sr-only">Feature</span></th><th class="accent-text">Essential</th><th>Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Price</td><td>$54.99/mo</td><td>$84.99/mo</td></tr>
+              <tr><td>Data</td><td>25 GB</td><td>Unlimited</td></tr>
+              <tr><td>Hotspot</td><td>10 GB</td><td>20 GB</td></tr>
+              <tr><td>Intl calling</td><td>100 min</td><td class="muted">Not included</td></tr>
+              <tr><td>Roaming credit</td><td class="muted">Not included</td><td>Included</td></tr>
+              <tr><td>eSIM activation</td><td>Free</td><td>Free</td></tr>
+              <tr><td>ExpressVPN</td><td>Included</td><td>Included</td></tr>
+              <tr class="row-em"><td>Bitcoin back</td><td>4%</td><td>8%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR BITCOIN HOLDERS -->
+    <section id="holders" class="section section-dark">
+      <div class="wrap grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div class="reveal">
+          <p class="eyebrow">For Bitcoin holders</p>
+          <h2 class="display-l">Already hold BTC? Your first Premium cycle is on us.</h2>
+          <p class="lead mt-6">Hold Bitcoin in Cash App, Strike, Fold or Coinbase? Verify your holding and your first cycle on Premium is covered.</p>
+          <ul class="mt-8 space-y-5">
+            <li class="flex gap-4"><span class="icon-tile shrink-0" style="width:40px;height:40px;border-radius:12px"><svg class="icon icon-sm"><use href="#i-zap"/></svg></span><span class="body"><b style="color:var(--text);font-weight:600">Instant Lightning verification.</b> Verify your holding without paperwork.</span></li>
+            <li class="flex gap-4"><span class="icon-tile shrink-0" style="width:40px;height:40px;border-radius:12px"><svg class="icon icon-sm"><use href="#i-key"/></svg></span><span class="body"><b style="color:var(--text);font-weight:600">Your wallet, your keys.</b> Rewards are routed to your own Lightning or on-chain address each billing cycle.</span></li>
+            <li class="flex gap-4"><span class="icon-tile shrink-0" style="width:40px;height:40px;border-radius:12px"><svg class="icon icon-sm"><use href="#i-ban"/></svg></span><span class="body"><b style="color:var(--text);font-weight:600">No custody.</b> We never hold your rewards.</span></li>
+          </ul>
+          <a href="#signup" class="btn btn-glow btn-lg mt-10">Claim my first cycle</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="reveal card p-9 text-center brand-card spot lift"><svg class="mx-auto mb-4" width="56" height="56" style="display:block;border-radius:14px;box-shadow:0 10px 26px -12px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.08)" viewBox="0 0 48 48" role="img" aria-label="Cash App logo"><rect width="48" height="48" rx="11" fill="#00D64F"/><path d="M31.8 18.6a1 1 0 0 0 1.4-.2l1.3-1.7a1 1 0 0 0-.1-1.3c-1.6-1.4-3.8-2.3-6-2.6l.4-1.8a1 1 0 0 0-1-1.2h-2a1 1 0 0 0-1 .8l-.4 1.9c-4.1.3-7.5 2.5-7.5 6.6 0 3.6 2.7 5.2 5.6 6.2l2.9 1c1.9.7 3.4 1.3 3.4 2.8 0 1.6-1.6 2.5-3.9 2.5-2 0-4.2-.7-5.8-2.1a1 1 0 0 0-1.4.1l-1.4 1.6a1 1 0 0 0 0 1.3c1.5 1.5 3.6 2.5 5.9 3l-.4 1.8a1 1 0 0 0 1 1.2h2a1 1 0 0 0 1-.8l.4-1.9c4.9-.3 8-3 8-7.1 0-3.3-2.9-4.9-6.3-6.1l-2.4-.8c-1.8-.6-3.2-1.1-3.2-2.6 0-1.5 1.6-2.3 3.4-2.3 1.7 0 3.7.6 5.1 1.7z" fill="#fff"/></svg><div style="font-weight:600">Cash App</div><div class="fine mt-1">Eligible holding</div></div>
+          <div class="reveal card p-9 text-center brand-card spot lift"><svg class="mx-auto mb-4" width="56" height="56" style="display:block;border-radius:14px;box-shadow:0 10px 26px -12px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.08)" viewBox="0 0 48 48" role="img" aria-label="Strike logo"><rect width="48" height="48" rx="11" fill="#000"/><path d="M27.5 8 13 26.5h9.2L20 40l14.5-18.5h-9.2Z" fill="#F7931A"/></svg><div style="font-weight:600">Strike</div><div class="fine mt-1">Eligible holding</div></div>
+          <div class="reveal card p-9 text-center brand-card spot lift"><svg class="mx-auto mb-4" width="56" height="56" style="display:block;border-radius:14px;box-shadow:0 10px 26px -12px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.08)" viewBox="0 0 48 48" role="img" aria-label="Fold logo"><rect width="48" height="48" rx="11" fill="#0B0B0B"/><path d="M16 11h16v6h-10v6h8v6h-8v8h-6Z" fill="#FFD23F"/></svg><div style="font-weight:600">Fold</div><div class="fine mt-1">Eligible holding</div></div>
+          <div class="reveal card p-9 text-center brand-card spot lift"><svg class="mx-auto mb-4" width="56" height="56" style="display:block;border-radius:14px;box-shadow:0 10px 26px -12px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.08)" viewBox="0 0 48 48" role="img" aria-label="Coinbase logo"><rect width="48" height="48" rx="11" fill="#0052FF"/><circle cx="24" cy="24" r="11" fill="none" stroke="#fff" stroke-width="4.5"/><rect x="19.5" y="21.5" width="9" height="5" rx="1" fill="#0052FF"/></svg><div style="font-weight:600">Coinbase</div><div class="fine mt-1">Eligible holding</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section id="coverage" class="section">
+      <div class="wrap text-center">
+        <div class="reveal section-head" style="margin-bottom:0">
+          <p class="eyebrow">Coverage</p>
+          <h2 class="display-l">Nationwide 5G on the World Mobile network.</h2>
+          <p class="lead mt-5">Bitcoin Mobile is operated by CUEN and runs on the World Mobile network across the United States.</p>
+        </div>
+        <div class="reveal mt-16 grid sm:grid-cols-3 gap-px rounded-[24px] overflow-hidden" style="background:var(--hairline);border:1px solid var(--hairline)">
+          <div class="cov-cell p-10"><div class="icon-tile mx-auto mb-5"><svg class="icon"><use href="#i-signal"/></svg></div><h3 class="title" style="font-size:19px">5G speeds</h3><p class="small mt-2">High-speed 5G where available.</p></div>
+          <div class="cov-cell p-10"><div class="icon-tile mx-auto mb-5"><svg class="icon"><use href="#i-globe"/></svg></div><h3 class="title" style="font-size:19px">US-wide</h3><p class="small mt-2">Built for coast-to-coast use.</p></div>
+          <div class="cov-cell p-10"><div class="icon-tile mx-auto mb-5"><svg class="icon"><use href="#i-pin"/></svg></div><h3 class="title" style="font-size:19px">Check your area</h3><p class="small mt-2">Enter your ZIP code below.</p></div>
+        </div>
+        <div class="reveal card card-pad zip-card spot mt-6 mx-auto">
+          <h3 class="title">Check your ZIP code</h3>
+          <p class="small mt-2">Enter the ZIP code where you will use your phone most.</p>
+          <form class="zip-form" id="zip-form" action="#" novalidate>
+            <input type="text" id="zip-input" name="zip" class="input" maxlength="5" inputmode="numeric" pattern="[0-9]{5}" placeholder="ZIP code" aria-label="ZIP code" autocomplete="postal-code" required>
+            <button type="submit" class="btn btn-glow">Check</button>
+          </form>
+          <div class="zip-result" id="zip-result" role="status" aria-live="polite"></div>
+        </div>
+        <p class="fine mt-6">Coverage and speeds vary by location, device and network conditions.</p>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="section section-alt story">
+      <div class="wrap wrap-text text-center reveal">
+        <div class="story-mark" aria-hidden="true">₿</div>
+        <p class="eyebrow">The story</p>
+        <h2 class="display-l">Why we pay you in Bitcoin.</h2>
+        <p class="lead mt-8 wr" id="wordReveal" style="color:var(--text)">In 2008, the financial system broke. A nine-page paper proposed a system that didn't require trust. Since then, Bitcoin has been adopted by individuals, public companies and even governments. The same reasons apply to the bill you pay every month.</p>
+        <p class="lead mt-5">Your phone bill is one of your most predictable expenses. We think part of it should come back to you as the asset you believe in.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="wrap wrap-narrow">
+        <div class="section-head reveal" style="margin-bottom:48px">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="display-l">Common questions.</h2>
+        </div>
+        <div class="faq reveal" id="faqList">
+          <div><button aria-expanded="false"><span>How do I get paid my Bitcoin back?</span><svg class="icon faq-plus"><use href="#i-plus"/></svg></button><div class="faq-body">Each billing cycle your plan's reward percentage is sent in BTC to a Lightning or on-chain address you provide. You hold the keys.</div></div>
+          <div><button aria-expanded="false"><span>Do you ever hold my Bitcoin?</span><svg class="icon faq-plus"><use href="#i-plus"/></svg></button><div class="faq-body">No. Rewards are sent to your self-custody wallet, so you are not relying on us to keep them.</div></div>
+          <div><button aria-expanded="false"><span>Is there a contract?</span><svg class="icon faq-plus"><use href="#i-plus"/></svg></button><div class="faq-body">No. Plans are month to month.</div></div>
+          <div><button aria-expanded="false"><span>How does activation work?</span><svg class="icon faq-plus"><use href="#i-plus"/></svg></button><div class="faq-body">Activation is by eSIM, so you can set up without visiting a store. Early access activations open in waves.</div></div>
+          <div><button aria-expanded="false"><span>Is the Bitcoin reward guaranteed to be worth the same later?</span><svg class="icon faq-plus"><use href="#i-plus"/></svg></button><div class="faq-body">No. The reward is a percentage of your plan price converted to BTC when issued. Bitcoin's price can go up or down after you receive it.</div></div>
+          <div><button aria-expanded="false"><span>Who runs Bitcoin Mobile?</span><svg class="icon faq-plus"><use href="#i-plus"/></svg></button><div class="faq-body">Bitcoin Mobile is operated by CUEN (OTCQB-listed) on the World Mobile network.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section id="signup" class="section section-dark signup">
+      <div class="wrap text-center reveal">
+        <h2 class="display-xl">Get on the <span class="grad-text">network.</span></h2>
+        <p class="lead mt-5">Activations open in waves. Join the early access list.</p>
+
+        <form id="signupForm" class="card card-pad space-y-5 text-left mx-auto mt-12" style="max-width:460px">
+          <label class="field">Full name
+            <input type="text" required autocomplete="name" class="input">
+          </label>
+          <label class="field">Email
+            <input type="email" required autocomplete="email" class="input">
+          </label>
+          <label class="field">Plan
+            <select id="planSelect" class="input">
+              <option value="essential" selected>Essential ($54.99/mo)</option>
+              <option value="premium">Premium ($84.99/mo)</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-glow btn-lg btn-block">Join early access</button>
+          <p class="fine text-center">No payment needed now.</p>
+        </form>
+
+        <div id="thanks" class="hidden card card-pad mx-auto mt-12" style="max-width:460px" role="status">
+          <div class="icon-tile mx-auto mb-5" style="background:var(--accent-soft);color:var(--accent-text)"><svg class="icon"><use href="#i-zap"/></svg></div>
+          <h3 class="display-s">You're on the list.</h3>
+          <p class="body mt-2">We'll email you when your activation wave opens.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap wrap-wide">
+      <div class="footer-grid">
+        <div class="space-y-3">
+          <div class="brand"><span class="brand-mark">₿</span><span>Bitcoin<b>Mobile</b></span></div>
+          <p style="max-width:340px">Nationwide 5G that pays you in Bitcoin. Operated by CUEN on the World Mobile network.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="#plans">Plans</a><a href="#calculator">Rewards</a><a href="bitcoin-switch.html">For Bitcoin holders</a><a href="#faq">FAQ</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="story.html">Story</a><a href="about.html">About</a><a href="#coverage">Coverage</a><a href="#">Terms of Service</a><a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>© 2026 Bitcoin Mobile by CUEN · World Mobile Network</p>
+        <p>Bitcoin rewards are paid in BTC at the market rate when issued. Bitcoin is volatile and its value can go down as well as up. Calculator figures are illustrations based on your inputs, not predictions. Coverage, speeds and plan features vary and are subject to the Terms of Service.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    function $(s,r){return (r||document).querySelector(s)}
+    function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Count-up stats
+    $$('[data-count]').forEach(function(el){
+      var end=parseFloat(el.getAttribute('data-count')),dec=+(el.getAttribute('data-dec')||0),pre=el.getAttribute('data-prefix')||'',suf=el.getAttribute('data-suffix')||'',done=false;
+      function run(){if(done)return;done=true;if(reduce){return}var t0=null;function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/1100,1),v=end*(1-Math.pow(1-k,3));el.textContent=pre+v.toFixed(dec)+suf;if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+      if('IntersectionObserver' in window){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){run();o.disconnect()}},{threshold:.4});o.observe(el)}
+    });
+
+    // Hide sticky CTA while signup is on screen
+    var sc=$('#stickyCta'),su=$('#signup');
+    if(sc&&su&&'IntersectionObserver' in window){new IntersectionObserver(function(es){sc.style.transform=es[0].isIntersecting?'translateY(120%)':''},{threshold:.15}).observe(su)}
+
+    // Mobile menu
+    var menu=$('#menu'),mb=$('#menuBtn');
+    mb.addEventListener('click',function(){var h=menu.classList.toggle('hidden');mb.setAttribute('aria-expanded',h?'false':'true')});
+    $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.classList.add('hidden');mb.setAttribute('aria-expanded','false')})});
+
+    // Scroll reveal (falls back to visible if unsupported)
+    var els=$$('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+      els.forEach(function(el){io.observe(el)});
+    } else { els.forEach(function(el){el.classList.add('in')}); }
+
+    // Nav adapts to the dark hero
+    var nav=$('.nav'),hero=$('#hero');
+    if(nav&&hero){
+      nav.classList.add('nav-dark');
+      if('IntersectionObserver' in window){new IntersectionObserver(function(es){nav.classList.toggle('nav-dark',es[0].isIntersecting)},{rootMargin:'-48px 0px -100% 0px'}).observe(hero)}
+    }
+
+    var dev=$('#device'),fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+    // Scroll-driven motion (hero fade + phone scale, word reveal)
+    var heroBits=$$('#hero .rise'),wrEl=$('#wordReveal'),words=[];
+    if(wrEl&&!reduce){
+      wrEl.innerHTML=wrEl.textContent.split(' ').map(function(w){return '<span class="w">'+w+'</span>'}).join(' ');
+      words=$$('.w',wrEl);
+    }
+    var ticking=false;
+    function onScroll(){
+      ticking=false;
+      var vh=window.innerHeight;
+      if(!reduce&&hero){
+        var p=Math.min(Math.max(window.scrollY/(vh*.9),0),1);
+        heroBits.forEach(function(el){el.style.opacity=(1-p*1.25).toFixed(3);el.style.transform='translateY('+(-p*48).toFixed(1)+'px)'});
+        if(dev)dev.style.transform='scale('+(0.94+p*0.12).toFixed(4)+')';
+      }
+      if(words.length){
+        var r=wrEl.getBoundingClientRect(),q=(vh*.82-r.top)/(r.height+vh*.25),lit=Math.round(Math.min(Math.max(q,0),1)*words.length);
+        for(var i=0;i<words.length;i++){words[i].classList.toggle('lit',i<lit)}
+      }
+    }
+    window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+    onScroll();
+
+    // Pinned phone: the screen follows the step in view
+    var steps=$$('.ss-step'),screens=$$('.ss-screen');
+    if(steps.length&&'IntersectionObserver' in window){
+      var so=new IntersectionObserver(function(es){es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var k=e.target.getAttribute('data-step');
+        steps.forEach(function(s){s.classList.toggle('is-active',s===e.target)});
+        screens.forEach(function(sc){sc.classList.toggle('is-active',sc.getAttribute('data-screen')===k)});
+      })},{rootMargin:'-45% 0px -45% 0px'});
+      steps.forEach(function(st){so.observe(st)});
+    }
+
+    // Spotlight that follows the cursor on cards
+    if(fine){$$('.spot').forEach(function(el){
+      el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')});
+    })}
+
+    // Hero sats counter
+    var hs=$('#heroSats'),n=0,target=2200;
+    if(reduce){hs.textContent=target.toLocaleString('en-US')}
+    else{var t=setInterval(function(){n+=Math.ceil(Math.random()*45);if(n>=target){n=target;clearInterval(t)}hs.textContent=n.toLocaleString('en-US')},45)}
+
+    // Chart
+    function chart(p,months,price,sats){
+      var W=600,H=190,L=30,R=570,T=20,B=160,pts=[],i,max=Math.max(sats,1);
+      for(i=0;i<=months;i++){var s=p.fee*p.rate*i/price*1e8;pts.push([L+(R-L)*(i/months),B-(B-T)*(s/max)])}
+      var d='M'+pts.map(function(q){return q[0].toFixed(1)+' '+q[1].toFixed(1)}).join(' L');
+      $('#cLine').setAttribute('d',d);
+      $('#cArea').setAttribute('d',d+' L'+R+' '+B+' L'+L+' '+B+' Z');
+      var last=pts[pts.length-1];
+      $('#cDot').setAttribute('cx',last[0]);$('#cDot').setAttribute('cy',last[1]);
+      var e=$('#cEnd');e.setAttribute('x',last[0]-12);e.setAttribute('y',Math.max(last[1]-12,14));e.textContent=sats.toLocaleString('en-US')+' sats';
+      $('#cXEnd').textContent='Month '+months;
+      var g='';for(i=0;i<4;i++){var y=T+(B-T)*i/3;g+='<line x1="'+L+'" x2="'+R+'" y1="'+y+'" y2="'+y+'" stroke="#e8e8ed" stroke-width="1"/>'}
+      $('#cGrid').innerHTML=g;
+    }
+    // Calculator
+    var plans={essential:{fee:54.99,rate:.04},premium:{fee:84.99,rate:.08}};
+    var cur='essential';
+    var mo=$('#cMonths'),pr=$('#cPrice');
+    function calc(){
+      var p=plans[cur],months=+mo.value,price=+pr.value;
+      var usd=p.fee*p.rate*months, sats=Math.round(usd/price*1e8);
+      $('#cFee').textContent='$'+p.fee.toFixed(2);
+      $('#cRate').textContent=(p.rate*100)+'% back';
+      $('#cMonthsLbl').textContent=months+' months';
+      $('#cM2').textContent=months;
+      $('#cPriceLbl').textContent='$'+price.toLocaleString('en-US');
+      $('#cSats').textContent=sats.toLocaleString('en-US');
+      $('#cUsd').textContent='$'+usd.toFixed(2);
+      chart(p,months,price,sats);
+    }
+    $$('.seg').forEach(function(b){
+      b.setAttribute('aria-pressed',b.classList.contains('active')?'true':'false');
+      b.addEventListener('click',function(){
+        cur=b.getAttribute('data-k');
+        $$('.seg').forEach(function(x){x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',x===b?'true':'false')});
+        calc();
+      });
+    });
+    mo.addEventListener('input',calc);pr.addEventListener('input',calc);calc();
+
+    // Plan buttons preselect signup plan
+    $$('.plan-pick').forEach(function(a){a.addEventListener('click',function(){$('#planSelect').value=a.getAttribute('data-plan')})});
+
+    // Coverage ZIP check.
+    // checkCoverage() is the single place to connect real coverage data.
+    // It must resolve to 'covered', 'not_covered' or 'unknown'. Until a data
+    // source is connected it returns 'unknown', so the page never claims
+    // coverage it has not verified.
+    function checkCoverage(zip){return Promise.resolve('unknown')}
+    (function(){
+      var f=document.getElementById('zip-form'),inp=document.getElementById('zip-input'),out=document.getElementById('zip-result');
+      if(!f)return;
+      function show(cls,html){out.className='zip-result '+cls;out.innerHTML=html}
+      inp.addEventListener('input',function(){inp.value=inp.value.replace(/\D/g,'').slice(0,5)});
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var zip=inp.value.trim();
+        if(!/^\d{5}$/.test(zip)){show('is-err','Enter a 5 digit US ZIP code.');inp.focus();return}
+        var cta=' <a href="#signup">Join early access</a>';
+        checkCoverage(zip).then(function(r){
+          if(r==='covered')show('is-yes','<b>Good news. '+zip+' is covered.</b> You can activate by eSIM as soon as we launch.'+cta);
+          else if(r==='not_covered')show('is-no','<b>We do not cover '+zip+' yet.</b> Join the list and we will email you when that changes.'+cta);
+          else show('is-info','<b>Got it: '+zip+'.</b> Bitcoin Mobile runs on a nationwide 5G network. Live ZIP results open at launch, and we confirm coverage for your address before you activate.'+cta);
+        }).catch(function(){show('is-err','We could not check that right now. Please try again.')});
+      });
+    })();
+
+    // FAQ accordion
+    $$('#faqList > div').forEach(function(item){
+      $('button',item).addEventListener('click',function(){
+        var open=item.classList.contains('faq-open');
+        $$('#faqList > div').forEach(function(i){i.classList.remove('faq-open');$('button',i).setAttribute('aria-expanded','false')});
+        if(!open){item.classList.add('faq-open');this.setAttribute('aria-expanded','true')}
+      });
+    });
+
+    // Signup (demo: no backend yet)
+    $('#signupForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      this.classList.add('hidden');
+      $('#thanks').classList.remove('hidden');
+    });
+  })();
+  </script>
+</body>
+</html>
