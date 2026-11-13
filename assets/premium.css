@@ -640,6 +640,7 @@ input[type=range]{background:rgba(255,255,255,.16)}
 /* Poster variant: a finished graphic with its own title, shown as-is */
 .amb-photo--poster img{object-position:50% 50%;filter:none}
 .amb-photo--poster::before,.amb-photo--poster::after{display:none}
+.amb-photo--poster .amb-tag{display:none} /* the image carries its own badge and logo */
 
 /* Copy */
 .amb-name{font-family:var(--font-display);font-weight:600;font-size:clamp(3.4rem,6vw + 1rem,6.5rem);line-height:.95;letter-spacing:-.055em;color:var(--text);margin-top:18px}
