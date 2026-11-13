@@ -675,3 +675,15 @@ input[type=range]{background:rgba(255,255,255,.16)}
 .amb-photo--poster::before{display:block;content:"";position:absolute;inset:-30px;z-index:0;pointer-events:none;mix-blend-mode:normal;
   background:#0a0703 url("rick-ross-the-boss.jpg?v=2") center/cover no-repeat;filter:blur(30px) brightness(.4) saturate(1.2)}
 .amb-photo--poster .amb-tag{z-index:2}
+/* Ambassador, desktop (final): the frame keeps the poster's exact 4:5 shape, so the poster fills it
+   edge to edge with no gaps and no cropping. The text column is stretched to the poster's height:
+   "Ambassador" lines up with the top of the poster and the stats box with its bottom. */
+@media (min-width:1024px){
+  .amb-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:stretch}
+  .amb-photo{height:auto;aspect-ratio:4/5;align-self:start;margin:0}
+  .amb-photo{container-type:normal}
+  .amb-grid>.reveal:last-child{display:flex;flex-direction:column}
+  .amb-grid>.reveal:last-child>p.body:last-of-type{margin-bottom:28px}
+  .amb-grid .amb-facts{margin-top:auto}
+}
+.amb-photo--poster img{object-fit:cover}
