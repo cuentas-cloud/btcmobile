@@ -659,3 +659,13 @@ input[type=range]{background:rgba(255,255,255,.16)}
   .amb-grid>.reveal:last-child>.btn{position:absolute;left:0;top:calc(100% + 40px);margin:0}
   .amb-photo{height:calc(100% - 9px);max-width:none;aspect-ratio:auto;margin:9px 0 0}
 }
+/* Ambassador, desktop: keep "Rick Ross." on one line at every width (sized to its column),
+   and never crop the poster's own title: if the frame gets too tall, show the whole poster */
+@media (min-width:1024px){
+  .amb-grid>.reveal:last-child{container-type:inline-size}
+  .amb-name{white-space:nowrap;font-size:min(6.5rem,18.5cqi)}
+  .amb-photo{container-type:size;container-name:ambphoto}
+}
+@container ambphoto (max-aspect-ratio: 0.7){
+  .amb-photo--poster img{object-fit:contain;object-position:50% 100%}
+}
