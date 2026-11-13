@@ -669,3 +669,9 @@ input[type=range]{background:rgba(255,255,255,.16)}
 @container ambphoto (max-aspect-ratio: 0.7){
   .amb-photo--poster img{object-fit:contain;object-position:50% 100%}
 }
+/* Ambassador poster: always show the whole poster (logo and title never cut off).
+   Any spare space in the frame is filled with a soft, blurred copy of the poster. */
+.amb-photo--poster img{object-fit:contain;object-position:50% 50%;z-index:1}
+.amb-photo--poster::before{display:block;content:"";position:absolute;inset:-30px;z-index:0;pointer-events:none;mix-blend-mode:normal;
+  background:#0a0703 url("rick-ross-the-boss.jpg?v=2") center/cover no-repeat;filter:blur(30px) brightness(.4) saturate(1.2)}
+.amb-photo--poster .amb-tag{z-index:2}
