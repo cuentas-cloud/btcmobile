@@ -651,3 +651,11 @@ input[type=range]{background:rgba(255,255,255,.16)}
 @media (max-width:560px){.amb-facts{grid-template-columns:1fr}.amb-facts div{display:flex;align-items:baseline;gap:14px;padding:18px 20px}.amb-facts b{flex:none;min-width:86px}.amb-facts span{margin-top:0}
   .amb-cap strong{font-size:26px}}
   
+
+/* Ambassador, desktop: the poster spans exactly from the "Ambassador" label to the bottom of the stats */
+@media (min-width:1024px){
+  .amb-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:stretch;margin-bottom:104px}
+  .amb-grid>.reveal:last-child{position:relative}
+  .amb-grid>.reveal:last-child>.btn{position:absolute;left:0;top:calc(100% + 40px);margin:0}
+  .amb-photo{height:calc(100% - 9px);max-width:none;aspect-ratio:auto;margin:9px 0 0}
+}
